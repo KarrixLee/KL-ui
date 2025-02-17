@@ -62,7 +62,7 @@ const UnsavePopup = memo(function UnsavePopup({
   children,
   onSave,
   onReset,
-  shouldShakeFn,
+  shouldBlockFn,
   show,
   className,
 }: {
@@ -70,7 +70,7 @@ const UnsavePopup = memo(function UnsavePopup({
   className?: string;
   onSave?: () => Promise<void>;
   onReset?: () => void;
-  shouldShakeFn?: () => boolean;
+  shouldBlockFn?: () => boolean;
   show: boolean;
 }) {
   const controls = useAnimation();
@@ -187,10 +187,10 @@ const UnsavePopup = memo(function UnsavePopup({
   );
 
   useEffect(() => {
-    if (shouldShakeFn && shouldShakeFn()) {
+    if (shouldBlockFn && shouldBlockFn()) {
       triggerShake();
     }
-  }, [shouldShakeFn, triggerShake]);
+  }, [shouldBlockFn, triggerShake]);
 
   return (
     <AnimatePresence>

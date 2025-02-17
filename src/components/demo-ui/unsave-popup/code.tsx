@@ -54,7 +54,7 @@ export function UnsavePopupDemo() {
     setCloseForm(true);
   }, [value, isSaved]);
 
-  const shouldShakeFn = useCallback(() => shouldBlockNav, [shouldBlockNav]);
+  const shouldBlockFn = useCallback(() => shouldBlockNav, [shouldBlockNav]);
 
   const formContent = useMemo(
     () => (
@@ -113,7 +113,7 @@ export function UnsavePopupDemo() {
       <UnsavePopup
         onSave={handleSave}
         onReset={handleReset}
-        shouldShakeFn={shouldShakeFn}
+        shouldBlockFn={shouldBlockFn}
         show={showPopup}
         className="w-full"
       >

@@ -34,10 +34,10 @@ const unsavePopupProps: PropDefinition[] = [
       "Callback function when reset button is clicked (used in default mode)",
   },
   {
-    prop: "shouldShakeFn",
+    prop: "shouldBlockFn",
     type: "() => boolean",
     description:
-      "Function to determine if the popup should trigger the shake animation",
+      "Function to determine if the popup should trigger the block animation",
   },
   {
     prop: "className",
