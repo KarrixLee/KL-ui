@@ -1,0 +1,64 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "karrix",
+  "homepage": "https://karrix.dev",
+  "items": [
+    {
+      "name": "info-card",
+      "type": "registry:block",
+      "description": "Information cards can serve as callout cards, banners, toast notifications, or announcement boxes to deliver news, updates, and alerts to your users.",
+      "dependencies": ["motion"],
+      "files": [
+        {
+          "name": "info-card.tsx",
+          "path": "registry/kl-ui/info-card/info-card.tsx",
+          "type": "registry:component",
+          "target": "components/kl-ui/info-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "info-card-demo",
+      "type": "registry:example",
+      "description": "Example of the kl-ui info-card component.",
+      "registryDependencies": ["https://karrix.dev/r/info-card"],
+      "files": [
+        {
+          "name": "info-card-demo.tsx",
+          "path": "registry/kl-ui/info-card/info-card-demo.tsx",
+          "type": "registry:example",
+          "target": "components/info-card-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "unsave-popup",
+      "type": "registry:block",
+      "description": "A popup component to confirm before discarding changes. Inspired by Discord, it will shake when the user tries to leave without saving.",
+      "dependencies": ["motion"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "name": "unsave-popup.tsx",
+          "path": "registry/kl-ui/unsave-popup/unsave-popup.tsx",
+          "type": "registry:component",
+          "target": "components/kl-ui/unsave-popup.tsx"
+        }
+      ]
+    },
+    {
+      "name": "unsave-popup-demo",
+      "type": "registry:example",
+      "description": "Example of the kl-ui unsave-popup component.",
+      "registryDependencies": ["https://karrix.dev/r/unsave-popup"],
+      "files": [
+        {
+          "name": "unsave-popup-demo.tsx",
+          "path": "registry/kl-ui/unsave-popup/unsave-popup-demo.tsx",
+          "type": "registry:example",
+          "target": "components/unsave-popup-demo.tsx"
+        }
+      ]
+    }
+  ]
+}

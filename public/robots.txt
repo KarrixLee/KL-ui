@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Allow: /components/unsave-popup
+Allow: /components/info-card
+Allow: /documentation
+
+Sitemap: https://karrix.dev/sitemap.xml
