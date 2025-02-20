@@ -27,6 +27,13 @@ export const metadata: Metadata = {
     "Motion",
     "Framer Motion",
   ],
+  openGraph: {
+    images: ["/readme-cover.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/readme-cover.jpg"],
+  },
   authors: [{ name: "Karrix Lee", url: "https://github.com/karrixlee" }],
 };
 
@@ -105,11 +112,7 @@ export default function Home() {
 
       <div className="flex flex-col gap-6 max-w-[750px]">
         <h2 className="text-2xl font-medium">FAQ</h2>
-        <Accordion
-          type="single"
-          collapsible
-          className="w-full"
-        >
+        <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>Can I use this in my project?</AccordionTrigger>
             <AccordionContent className="text-gray-600 text-base leading-relaxed">
@@ -141,8 +144,8 @@ export default function Home() {
             <AccordionTrigger>Why is there so little UI here?</AccordionTrigger>
             <AccordionContent className="text-gray-600 text-base leading-relaxed space-y-2">
               <p>
-                Simple — because I made this with love and interest. I&apos;m not
-                just throwing in random components for the sake of it.
+                Simple — because I made this with love and interest. I&apos;m
+                not just throwing in random components for the sake of it.
                 Everything here is something I genuinely think is the best
                 I&apos;ve ever made.
               </p>
