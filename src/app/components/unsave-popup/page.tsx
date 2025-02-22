@@ -236,7 +236,7 @@ export default async function UnsavePopupPage() {
       </div>
 
       {/* Right-side navigation */}
-      <div className="sticky top-24 h-fit ml-4">
+      <div className="sticky top-24 h-fit lg:ml-4">
         <NavigationMenu />
       </div>
     </div>

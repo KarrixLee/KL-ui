@@ -161,7 +161,7 @@ export function InfoCardDemo({ initialCodeHtml }: InfoCardDemoProps) {
 
       <AnimatePresence>
         {isInPlayground && (
-          <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-30">
+          <div className="fixed bottom-6 md:left-1/2 md:-translate-x-1/2 right-3 md:right-auto z-30">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -169,38 +169,42 @@ export function InfoCardDemo({ initialCodeHtml }: InfoCardDemoProps) {
               transition={{ duration: 0.2 }}
             >
               <div className="flex flex-col-reverse md:flex-row gap-2 items-end md:items-center">
-                <div className="bg-gradient-to-r from-white/95 to-gray-50/95 backdrop-blur-sm p-1 rounded-lg flex items-center gap-1 border border-gray-100/50 shadow-lg">
-                  {options.map((option, index) => (
-                    <Fragment key={option.id}>
-                      {index > 0 && <div className="w-px h-4 bg-gray-100" />}
-                      <div className="relative">
-                        <Button
-                          variant="ghost"
-                          className={`text-gray-700 rounded-md px-4 relative ${
-                            selected === option.id
-                              ? ""
-                              : "opacity-50 hover:opacity-100"
-                          }`}
-                          onClick={() => setSelected(option.id)}
-                        >
-                          {option.label}
-                          {option.id === "code" && <Code className="h-4 w-4" />}
-                          {selected === option.id && (
-                            <motion.div
-                              layoutId="underline"
-                              className="absolute bottom-0 left-2 right-2 h-0.5 bg-gray-900"
-                              initial={false}
-                              transition={{
-                                type: "spring",
-                                stiffness: 500,
-                                damping: 30,
-                              }}
-                            />
-                          )}
-                        </Button>
-                      </div>
-                    </Fragment>
-                  ))}
+                <div className="bg-gradient-to-r from-white/95 to-gray-50/95 backdrop-blur-sm p-1 rounded-lg border border-gray-100/50 shadow-lg overflow-x-auto scrollbar-hide">
+                  <div className="flex items-center min-w-fit">
+                    {options.map((option, index) => (
+                      <Fragment key={option.id}>
+                        {index > 0 && <div className="w-px h-4 bg-gray-100" />}
+                        <div className="relative">
+                          <Button
+                            variant="ghost"
+                            className={`text-gray-700 rounded-md px-4 relative whitespace-nowrap ${
+                              selected === option.id
+                                ? ""
+                                : "opacity-50 hover:opacity-100"
+                            }`}
+                            onClick={() => setSelected(option.id)}
+                          >
+                            {option.label}
+                            {option.id === "code" && (
+                              <Code className="h-4 w-4" />
+                            )}
+                            {selected === option.id && (
+                              <motion.div
+                                layoutId="underline"
+                                className="absolute bottom-0 left-2 right-2 h-0.5 bg-gray-900"
+                                initial={false}
+                                transition={{
+                                  type: "spring",
+                                  stiffness: 500,
+                                  damping: 30,
+                                }}
+                              />
+                            )}
+                          </Button>
+                        </div>
+                      </Fragment>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="flex gap-1 bg-gradient-to-r from-gray-50/95 to-white/95 backdrop-blur-sm p-1 rounded-lg border border-gray-100/50 shadow-lg">

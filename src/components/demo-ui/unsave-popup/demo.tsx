@@ -96,7 +96,7 @@ export function UnsavePopupDemo({
       {/* Bottom tab bar */}
       <AnimatePresence>
         {isInPlayground && (
-          <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-30">
+          <div className="fixed bottom-6 md:left-1/2 md:-translate-x-1/2 right-6 md:right-auto z-30">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
