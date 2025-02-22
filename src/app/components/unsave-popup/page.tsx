@@ -176,7 +176,7 @@ export default async function UnsavePopupPage() {
 
         {/* Usage Examples */}
         <div className="flex flex-col gap-4">
-          <h2 className="ml-2 text-lg font-medium" id="usage">
+          <h2 className="ml-2 text-lg font-medium" id="props">
             Usage Examples
           </h2>
 
@@ -223,7 +223,7 @@ export default async function UnsavePopupPage() {
         {/* Props and Usage */}
         <div className="flex flex-col gap-4">
           <h2 className="ml-2 text-lg font-medium" id="props">
-            Props and Usage
+            Props
           </h2>
           <PropTable title="<UnsavePopup />" props={unsavePopupProps} />
           <PropTable
