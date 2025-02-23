@@ -27,10 +27,13 @@ export function CommandMenu({
 }) {
   const router = useRouter();
 
-  const runCommand = React.useCallback((command: () => unknown) => {
-    onOpenChange(false);
-    command();
-  }, []);
+  const runCommand = React.useCallback(
+    (command: () => unknown) => {
+      onOpenChange(false);
+      command();
+    },
+    [onOpenChange]
+  );
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -41,7 +44,7 @@ export function CommandMenu({
     };
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
-  }, []);
+  }, [onOpenChange, open]);
 
   return (
     <CommandDialog open={open} onOpenChange={onOpenChange}>
