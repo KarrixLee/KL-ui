@@ -1,7 +1,8 @@
 import { InfoCardDemo } from "@/components/demo-ui/info-card/demo";
 import {
   InfoCardDemoCode,
-  infoCardStructureCode,
+  basicUsageRawCode,
+  stepsUsageRawCode,
 } from "@/components/demo-ui/info-card/code";
 import { InfoCardInstallationCode } from "@/components/demo-ui/info-card/installation";
 import { NavigationMenu } from "@/components/navigation-menu";
@@ -11,6 +12,7 @@ import { codeToHtml } from "shiki";
 import { CodeBlock } from "@/components/ui/code-block";
 import { Metadata } from "next";
 import { OpenInV0Button } from "@/components/open-in-v0";
+import { PreviewCodeTabs } from "@/components/demo-ui/info-card/preview-code-tabs";
 
 const infoCardProps: PropDefinition[] = [
   {
@@ -109,7 +111,11 @@ export const metadata: Metadata = {
 // Make the page component async
 export default async function InfoCardPage() {
   const codeComponent = await InfoCardDemoCode();
-  const structureCode = await codeToHtml(infoCardStructureCode, {
+  const basicUsageCode = await codeToHtml(basicUsageRawCode, {
+    lang: "tsx",
+    theme: "min-dark",
+  });
+  const stepsUsageCode = await codeToHtml(stepsUsageRawCode, {
     lang: "tsx",
     theme: "min-dark",
   });
@@ -169,10 +175,24 @@ export default async function InfoCardPage() {
           {/* Basic usage example */}
           <div className="space-y-4">
             <div className="md:p-4">
+              <h3 className="font-medium mb-3 ml-2" id="basic-usage">
+                Basic Usage
+              </h3>
               <CodeBlock
-                html={structureCode}
+                html={basicUsageCode}
                 maxHeight={300}
                 expandedHeight={500}
+              />
+            </div>
+
+            {/* Steps usage example */}
+            <div className="md:p-4">
+              <h3 className="font-medium mb-3 ml-2" id="steps-usage">
+                Steps Usage
+              </h3>
+              <PreviewCodeTabs
+                layoutIdPrefix="steps-usage"
+                code={stepsUsageCode}
               />
             </div>
 
