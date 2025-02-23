@@ -50,6 +50,15 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
+interface MediaItem {
+  type?: "image" | "video";
+  src: string;
+  alt?: string;
+  className?: string;
+  autoPlay?: boolean;
+  loop?: boolean;
+}
+
 const items = [
   {
     title: "Home",
@@ -444,10 +453,17 @@ function NoMediaContent() {
 }
 
 // Multi-step content component
+interface Step {
+  title: string;
+  description: string;
+  image: MediaItem[];
+  expandHeight?: number;
+}
+
 export function MultiStepContent() {
   const [currentStep, setCurrentStep] = useState(0);
 
-  const steps = [
+  const steps: Step[] = [
     {
       title: "Welcome to Our Platform!",
       description: "Let's take a quick tour of our new features!",
@@ -516,7 +532,7 @@ export function MultiStepContent() {
         </InfoCardDescription>
         {steps[currentStep].image && (
           <InfoCardMedia
-            media={steps[currentStep].image as any}
+            media={steps[currentStep].image}
             expandHeight={steps[currentStep].expandHeight || undefined}
           />
         )}

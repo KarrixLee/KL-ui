@@ -197,10 +197,17 @@ export const basicUsageRawCode = `<InfoCard>
   </InfoCardContent>
 </InfoCard>`;
 
-export const stepsUsageRawCode = `function MultiStepContent() {
+export const stepsUsageRawCode = `interface Step {
+  title: string;
+  description: string;
+  image: MediaItem[];
+  expandHeight?: number;
+}
+  
+function MultiStepContent() {
   const [currentStep, setCurrentStep] = useState(0);
 
-  const steps = [
+  const steps: Step[] = [
     {
       title: "Welcome to Our Platform!",
       description: "Let's take a quick tour of our new features!",
@@ -270,7 +277,7 @@ export const stepsUsageRawCode = `function MultiStepContent() {
         </InfoCardDescription>
         {steps[currentStep].image && (
           <InfoCardMedia
-            media={steps[currentStep].image as any}
+            media={steps[currentStep].image}
             expandHeight={steps[currentStep].expandHeight || undefined}
           />
         )}
