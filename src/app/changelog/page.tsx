@@ -30,6 +30,12 @@ interface ChangelogEntry {
 
 const changelogData: ChangelogEntry[] = [
   {
+    version: "v0.1.1 - beta",
+    date: "23 Feb 2025",
+    title: "Dark mode support",
+    changes: ["Added dark mode support to the components"],
+  },
+  {
     version: "v0.1.0 - beta",
     date: "17 Feb 2025",
     title: "Initial beta release",

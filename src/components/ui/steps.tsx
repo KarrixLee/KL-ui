@@ -26,11 +26,11 @@ export function Step({
 }: StepProps) {
   return (
     <div className="group relative" onClick={onClick}>
-      <div className="absolute -left-[15px] top-1/2 -translate-y-1/2 rounded-full border bg-background p-1">
+      <div className="absolute -left-[15px] top-1/2 -translate-y-1/2 rounded-full border dark:border-zinc-600 bg-background dark:bg-zinc-900 p-1">
         <div
           className={cn(
             "flex h-5 w-5 items-center justify-center rounded-full transition-colors duration-200",
-            isCompleted ? "bg-primary text-primary-foreground" : "bg-muted"
+            isCompleted ? "bg-primary dark:bg-gray-100 text-primary-foreground" : "bg-muted"
           )}
         >
           {isCompleted ? (
@@ -43,7 +43,7 @@ export function Step({
       <div
         className={cn(
           "p-6 ml-5 rounded-lg border bg-card transition-all duration-200",
-          isActive && "border-primary/50",
+          isActive && "border-primary/50 dark:border-zinc-500",
           !isActive && "cursor-pointer hover:border-primary/20 opacity-50"
         )}
       >

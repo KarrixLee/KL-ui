@@ -86,8 +86,8 @@ export function UnsavePopupUI() {
           >
             <div
               className={cn(
-                "flex items-center justify-center p-4 gap-2 border border-gray-200",
-                "rounded-lg w-full max-w-[500px] h-[300px] shadow-md relative"
+                "flex items-center justify-center p-4 gap-2 border border-gray-200 dark:border-zinc-700",
+                "rounded-lg w-full max-w-[500px] h-[300px] shadow-md relative dark:bg-zinc-900"
               )}
             >
               {formContent}

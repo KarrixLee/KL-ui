@@ -86,6 +86,7 @@ interface MediaItem {
   className?: string;
   [key: string]: any;
 }
+
 interface InfoCardMediaProps extends React.HTMLAttributes<HTMLDivElement> {
   media: MediaItem[];
   loading?: "eager" | "lazy";
@@ -170,7 +171,13 @@ function InfoCard({
                 transition: { duration: 0.2 },
               }}
               transition={{ duration: 0.3, delay: 0 }}
-              className={cn("group rounded-lg border bg-white p-3", className)}
+              className={cn(
+                "group rounded-lg border p-3",
+                "bg-white",
+                "dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900",
+                "dark:border-zinc-700",
+                className
+              )}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
@@ -382,7 +389,7 @@ const InfoCardMedia = ({
                   <video
                     src={src}
                     className={cn(
-                      "w-full rounded-md border border-gray-200 object-cover shadow-lg",
+                      "w-full rounded-md border border-gray-200 dark:border-zinc-700/10 object-cover shadow-lg",
                       itemClassName
                     )}
                     onLoadedData={() => handleMediaLoad(src)}
@@ -396,7 +403,7 @@ const InfoCardMedia = ({
                     src={src}
                     alt={alt}
                     className={cn(
-                      "w-full rounded-md border border-gray-200 object-cover shadow-lg",
+                      "w-full rounded-md border border-gray-200 dark:border-zinc-700/10 object-cover shadow-lg",
                       itemClassName
                     )}
                     onLoad={() => handleMediaLoad(src)}
@@ -410,10 +417,7 @@ const InfoCardMedia = ({
         </div>
 
         <motion.div
-          className={cn(
-            "absolute right-0 bottom-0 left-0 h-10",
-            "bg-gradient-to-b from-transparent to-white"
-          )}
+          className="absolute right-0 bottom-0 left-0 h-10 bg-gradient-to-b from-transparent to-white dark:to-zinc-900"
           animate={{ opacity: isHovered ? 0 : 1 }}
           transition={{
             type: "spring",

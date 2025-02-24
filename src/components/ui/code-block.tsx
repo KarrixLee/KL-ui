@@ -83,7 +83,7 @@ export function CodeBlock({
             : false
         }
         transition={{ duration: 0.2 }}
-        className="relative rounded-lg overflow-hidden"
+        className="relative rounded-lg overflow-hidden dark:border dark:border-zinc-700"
       >
         <ScrollArea
           className={cn(
@@ -96,7 +96,7 @@ export function CodeBlock({
           )}
         >
           <div
-            className="p-5 text-sm leading-[1.6rem] bg-primary rounded-lg [&>pre]:!bg-transparent [&>pre]:!p-0 [&>pre]:whitespace-pre-wrap [&>pre]:break-words [&_.line-number]:pr-4 [&_.line-number]:text-zinc-500 [&_.line-number]:border-r [&_.line-number]:border-zinc-700 [&_.line-number]:mr-4"
+            className="p-5 text-sm leading-[1.6rem] bg-zinc-900 dark:bg-zinc-950 rounded-lg [&>pre]:!bg-transparent [&>pre]:!p-0 [&>pre]:whitespace-pre-wrap [&>pre]:break-words [&_.line-number]:pr-4 [&_.line-number]:text-zinc-500 [&_.line-number]:border-r [&_.line-number]:border-zinc-700 [&_.line-number]:mr-4"
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </ScrollArea>
@@ -105,7 +105,7 @@ export function CodeBlock({
       {showExpandButton && (
         <motion.div
           animate={{ opacity: isExpanded ? 0 : 1 }}
-          className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-primary to-transparent pointer-events-none rounded-b-lg"
+          className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-primary dark:from-zinc-950 to-transparent pointer-events-none rounded-b-lg"
         />
       )}
 

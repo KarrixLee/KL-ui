@@ -36,7 +36,7 @@ export function InstallationTabs({
   return (
     <div className="space-y-4 px-2">
       {/* Tab buttons */}
-      <div className="relative flex border-b border-gray-100 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-gray-100">
+      <div className="relative flex border-b border-gray-100 dark:border-zinc-700/50 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-gray-100 dark:after:bg-zinc-700/50">
         {options.map((option) => (
           <button
             key={option.id}

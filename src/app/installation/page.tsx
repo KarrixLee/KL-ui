@@ -89,7 +89,9 @@ export default function Installation() {
         </div>
       </div>
 
-      <div className="text-sm text-gray-700">... And you are good to go!</div>
+      <div className="text-sm text-gray-700 dark:text-zinc-300">
+        ... And you are good to go!
+      </div>
 
       {/* Next Steps */}
       <div className="space-y-4">

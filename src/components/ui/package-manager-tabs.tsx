@@ -85,7 +85,7 @@ export function PackageManagerTabs({
   return (
     <div className={cn("space-y-4", className)}>
       {/* Tab buttons */}
-      <div className="relative flex border-b border-gray-100 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-gray-100">
+      <div className="relative flex border-b border-gray-100 dark:border-zinc-700/50 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-gray-100 dark:after:bg-zinc-700/50">
         {options.map((option) => (
           <button
             key={option.id}
@@ -115,7 +115,7 @@ export function PackageManagerTabs({
 
       {/* Command display */}
       <div className="relative group">
-        <div className="p-5 text-sm font-mono leading-[1.6rem] bg-primary rounded-lg overflow-x-auto text-white">
+        <div className="p-5 text-sm font-mono leading-[1.6rem] bg-primary dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 dark:border dark:border-zinc-700/10 rounded-lg overflow-x-auto text-gray-100">
           {getCommand(selected)}
         </div>
         <Button

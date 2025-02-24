@@ -37,7 +37,7 @@ export function PreviewCodeTabs({
   return (
     <div className="space-y-4">
       {/* Tab buttons */}
-      <div className="relative flex border-b border-gray-100 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-gray-100">
+      <div className="relative flex border-b border-gray-100 dark:border-zinc-700/50 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-gray-100 dark:after:bg-zinc-700/50">
         {options.map((option) => (
           <button
             key={option.id}
@@ -68,7 +68,7 @@ export function PreviewCodeTabs({
       {/* Tab content */}
       <div>
         {selected === "preview" ? (
-          <div className="relative border border-gray-200 rounded-lg overflow-hidden h-[500px]">
+          <div className="relative border border-gray-200 dark:border-zinc-700/50 rounded-lg overflow-hidden h-[500px] dark:bg-gradient-to-br dark:from-zinc-900 dark:to-zinc-950">
             <SidebarDemo _key={key}>
               <MultiStepContent />
             </SidebarDemo>

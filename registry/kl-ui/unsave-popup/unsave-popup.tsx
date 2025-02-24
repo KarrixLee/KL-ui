@@ -93,6 +93,7 @@ const UnsavePopup = memo(function UnsavePopup({
         "blur(1px)",
         "blur(0px)",
       ],
+      "--warning-opacity": [0, 0.5, 0.3, 0.1, 0], 
       transition: {
         duration: 0.4,
         ease: easeOut,
@@ -206,7 +207,13 @@ const UnsavePopup = memo(function UnsavePopup({
             animate={controls}
             className={cn(
               "flex w-96 flex-row items-center justify-between gap-2 rounded-lg",
-              "border border-gray-200 bg-white px-4 py-2 text-sm shadow-md",
+              "border border-gray-200 bg-white dark:border-zinc-700",
+              "dark:bg-gradient-to-br dark:from-zinc-900 dark:to-zinc-950",
+              "px-4 py-2 text-sm shadow-md",
+              "relative before:absolute before:inset-0 before:rounded-lg",
+              "before:bg-red-500 [--warning-opacity:0]",
+              "before:opacity-[var(--warning-opacity)]",
+              "before:pointer-events-none",
               className
             )}
           >

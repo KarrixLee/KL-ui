@@ -16,7 +16,7 @@ import Link from "next/link";
 export function TweetCard() {
   return (
     <motion.div
-      className="max-w-[500px] rounded-lg border border-gray-200 p-4 pb-3 shadow-sm bg-gradient-to-r from-pink-50 to-blue-50"
+      className="max-w-[500px] rounded-lg border border-gray-200 dark:border-zinc-700/50 p-4 pb-3 shadow-sm bg-gradient-to-r from-pink-50 to-blue-50 dark:from-zinc-800 dark:to-zinc-900"
       style={{
         originY: "top",
       }}
@@ -61,23 +61,23 @@ export function TweetCard() {
             <div className="text-gray-500 text-xs">Replying to @me</div>
             <div className="py-2 text-[15px]">Amazing!</div>
             <div className="mt-2 flex items-center justify-between text-gray-500">
-              <button className="rounded-full p-2 hover:bg-blue-50 hover:text-blue-500 transition-colors">
+              <button className="rounded-full p-2 hover:bg-blue-50 dark:hover:bg-zinc-700/50 hover:text-blue-500 transition-colors">
                 <MessageCircle className="h-4 w-4" />
               </button>
-              <button className="rounded-full p-2 hover:bg-green-50 hover:text-green-500 transition-colors">
+              <button className="rounded-full p-2 hover:bg-green-50 dark:hover:bg-zinc-700/50 hover:text-green-500 transition-colors">
                 <Repeat2 className="h-4 w-4" />
               </button>
-              <button className="rounded-full p-2 hover:bg-pink-50 text-pink-600 transition-colors">
+              <button className="rounded-full p-2 hover:bg-pink-50 dark:hover:bg-zinc-700/50 text-pink-600 transition-colors">
                 <Heart className="h-4 w-4" />
               </button>
-              <button className="rounded-full p-2 hover:bg-blue-50 hover:text-blue-500 transition-colors">
+              <button className="rounded-full p-2 hover:bg-blue-50 dark:hover:bg-zinc-700/50 hover:text-blue-500 transition-colors">
                 <ChartNoAxesColumn className="h-4 w-4" />
               </button>
               <div className="flex items-center">
-                <button className="rounded-full p-2 hover:bg-blue-50 hover:text-blue-500 transition-colors">
+                <button className="rounded-full p-2 hover:bg-blue-50 dark:hover:bg-zinc-700/50 hover:text-blue-500 transition-colors">
                   <Bookmark className="h-4 w-4" />
                 </button>
-                <button className="rounded-full p-2 hover:bg-blue-50 hover:text-blue-500 transition-colors">
+                <button className="rounded-full p-2 hover:bg-blue-50 dark:hover:bg-zinc-700/50 hover:text-blue-500 transition-colors">
                   <Upload className="h-4 w-4" />
                 </button>
               </div>

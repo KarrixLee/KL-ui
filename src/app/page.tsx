@@ -71,7 +71,7 @@ export default function Home() {
 
       <TweetCard />
 
-      <div className="flex flex-col gap-6 max-w-[750px] text-gray-700">
+      <div className="flex flex-col gap-6 max-w-[750px] text-gray-700 dark:text-zinc-300">
         <p className="leading-relaxed">
           So here&apos;s the thing - I randomly posted some of my UI work on X
           one day and went off to grab dinner. When I came back, my phone was
@@ -115,7 +115,7 @@ export default function Home() {
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>Can I use this in my project?</AccordionTrigger>
-            <AccordionContent className="text-gray-600 text-base leading-relaxed">
+            <AccordionContent className="text-gray-600 dark:text-zinc-300 text-base leading-relaxed">
               Absolutely! This is an MIT licensed open-source project. Feel free
               to use it in any project, commercial or personal. Your feedback
               means a lot to me - I&apos;d love to hear about your experience
@@ -126,7 +126,7 @@ export default function Home() {
             <AccordionTrigger>
               How&apos;s the animation performance?
             </AccordionTrigger>
-            <AccordionContent className="text-gray-600 text-base leading-relaxed space-y-2">
+            <AccordionContent className="text-gray-600 dark:text-zinc-300 text-base leading-relaxed space-y-2">
               <p>
                 All complex animations are powered by Motion, while simpler UI
                 interactions use shadcn&apos;s built-in transitions. I&apos;ve
@@ -142,7 +142,7 @@ export default function Home() {
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>Why is there so little UI here?</AccordionTrigger>
-            <AccordionContent className="text-gray-600 text-base leading-relaxed space-y-2">
+            <AccordionContent className="text-gray-600 dark:text-zinc-300 text-base leading-relaxed space-y-2">
               <p>
                 Simple — because I made this with love and interest. I&apos;m
                 not just throwing in random components for the sake of it.
@@ -163,7 +163,7 @@ export default function Home() {
                 <Coffee className="inline-block h-4 w-4 text-amber-800" />
               </div>
             </AccordionTrigger>
-            <AccordionContent className="text-gray-600 text-base leading-relaxed space-y-2">
+            <AccordionContent className="text-gray-600 dark:text-zinc-300 text-base leading-relaxed space-y-2">
               <p>
                 Special thanks to{" "}
                 <HoverCardUser

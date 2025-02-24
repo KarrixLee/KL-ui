@@ -187,24 +187,30 @@ export default async function UnsavePopupPage() {
           </div>
 
           {/* Notice for compound components */}
-          <div className="border-l-2 border-l-yellow-500 bg-gradient-to-r from-yellow-50 to-transparent p-4 flex items-center gap-4">
+          <div className="border-l-2 border-l-yellow-500 bg-gradient-to-r from-yellow-50 dark:from-yellow-950/50 to-transparent p-4 flex items-center gap-4">
             <AlertTriangle className="w-4 h-4 text-yellow-500 shrink-0" />
             <blockquote className="space-y-2">
-              <p className="text-sm leading-6">
+              <p className="text-sm leading-6 dark:text-yellow-200/90">
                 When using compound components:
               </p>
-              <ul className="list-disc ml-4 text-sm leading-6">
+              <ul className="list-disc ml-4 text-sm leading-6 dark:text-yellow-200/90">
                 <li>
-                  <code>UnsavePopupDescription</code>
+                  <code className="dark:text-yellow-300">
+                    UnsavePopupDescription
+                  </code>
                 </li>
                 <li>
-                  <code>UnsavePopupAction</code>
+                  <code className="dark:text-yellow-300">
+                    UnsavePopupAction
+                  </code>
                 </li>
                 <li>
-                  <code>UnsavePopupDismiss</code>
+                  <code className="dark:text-yellow-300">
+                    UnsavePopupDismiss
+                  </code>
                 </li>
               </ul>
-              <p className="text-sm leading-6">
+              <p className="text-sm leading-6 dark:text-yellow-200/90">
                 You must include all three components together. Using them
                 individually will throw an error.
               </p>

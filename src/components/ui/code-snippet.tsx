@@ -29,7 +29,7 @@ export function CodeSnippet({ code, className, layoutId }: CodeSnippetProps) {
     <motion.div
       layoutId={layoutId}
       className={cn(
-        "relative rounded-lg border bg-primary text-primary-foreground",
+        "relative rounded-lg border bg-primary text-primary-foreground dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 dark:border dark:border-zinc-700/10 dark:text-zinc-200",
         className
       )}
     >
@@ -41,7 +41,7 @@ export function CodeSnippet({ code, className, layoutId }: CodeSnippetProps) {
         onClick={handleCopy}
         variant="ghost"
         size="icon"
-        className="absolute right-4 top-2 z-20 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white/10 text-white"
+        className="absolute right-4 top-2 z-20 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white/10 text-white dark:hover:bg-transparent"
       >
         <AnimatePresence mode="wait" initial={false}>
           {copied ? (

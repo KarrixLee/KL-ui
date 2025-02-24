@@ -74,7 +74,7 @@ export function UnsavePopupDemo({
   }, []);
 
   return (
-    <div className="border border-gray-200 rounded-lg overflow-hidden h-[500px]">
+    <div className="border border-gray-200 dark:border-zinc-700/50 rounded-lg overflow-hidden h-[500px] dark:bg-gradient-to-br dark:from-zinc-900 dark:to-zinc-950">
       <AnimatePresence mode="wait">
         {selected === "code" ? (
           <motion.div
@@ -104,14 +104,16 @@ export function UnsavePopupDemo({
               transition={{ duration: 0.2 }}
             >
               <div className="flex flex-col-reverse md:flex-row gap-2 items-end md:items-center">
-                <div className="bg-gradient-to-r from-white/95 to-gray-50/95 backdrop-blur-sm p-1 rounded-lg flex items-center gap-1 border border-gray-100/50 shadow-lg">
+                <div className="bg-gradient-to-r from-white/95 to-gray-50/95 dark:from-zinc-800/95 dark:to-zinc-900/95 backdrop-blur-sm p-1 rounded-lg flex items-center gap-1 border border-gray-100/50 dark:border-zinc-700 shadow-lg">
                   {options.map((option, index) => (
                     <Fragment key={option.id}>
-                      {index > 0 && <div className="w-px h-4 bg-gray-100" />}
+                      {index > 0 && (
+                        <div className="w-px h-4 bg-gray-100 dark:bg-zinc-600" />
+                      )}
                       <div className="relative">
                         <Button
                           variant="ghost"
-                          className={`text-gray-700 rounded-md px-4 relative ${
+                          className={`text-gray-700 dark:text-zinc-300 rounded-md px-4 relative ${
                             selected === option.id
                               ? ""
                               : "opacity-50 hover:opacity-100"
@@ -123,7 +125,7 @@ export function UnsavePopupDemo({
                           {selected === option.id && (
                             <motion.div
                               layoutId="underline"
-                              className="absolute bottom-0 left-2 right-2 h-0.5 bg-gray-900"
+                              className="absolute bottom-0 left-2 right-2 h-0.5 bg-gray-900 dark:bg-zinc-50"
                               initial={false}
                               transition={{
                                 type: "spring",
@@ -138,13 +140,13 @@ export function UnsavePopupDemo({
                   ))}
                 </div>
 
-                <div className="flex gap-1 bg-gradient-to-r from-gray-50/95 to-white/95 backdrop-blur-sm p-1 rounded-lg border border-gray-100/50 shadow-lg">
+                <div className="flex gap-1 bg-gradient-to-r from-gray-50/95 to-white/95 dark:from-zinc-800/95 dark:to-zinc-900/95 backdrop-blur-sm p-1 rounded-lg border border-gray-100/50 dark:border-zinc-700 shadow-lg">
                   <TooltipProvider>
-                    <Tooltip>
+                    <Tooltip delayDuration={0}>
                       <TooltipTrigger asChild>
                         <Button
                           variant="ghost"
-                          className="text-gray-600 hover:text-gray-900 hover:bg-gradient-to-b hover:from-gray-50 hover:to-gray-100/80 transition-all duration-200"
+                          className="text-gray-600 hover:text-gray-900 hover:bg-gradient-to-b hover:from-gray-50 hover:to-gray-100/80 dark:text-zinc-400 dark:hover:text-zinc-50 dark:hover:bg-gradient-to-b dark:hover:from-zinc-800 dark:hover:to-zinc-900/80 transition-all duration-200"
                           onClick={handleReload}
                           disabled={selected === "code"}
                         >
@@ -157,14 +159,14 @@ export function UnsavePopupDemo({
                     </Tooltip>
                   </TooltipProvider>
 
-                  <div className="w-px h-4 bg-gray-100 my-auto" />
+                  <div className="w-px h-4 bg-gray-100 my-auto dark:bg-zinc-600" />
 
                   <TooltipProvider>
-                    <Tooltip>
+                    <Tooltip delayDuration={0}>
                       <TooltipTrigger asChild>
                         <Button
                           variant="default"
-                          className="bg-gradient-to-b from-gray-900 to-black hover:from-gray-800 hover:to-gray-900 text-white border-0 transition-all duration-200"
+                          className="bg-gradient-to-b from-gray-900 to-black hover:from-gray-800 hover:to-gray-900 text-white border-0 transition-all duration-200 dark:bg-gradient-to-b dark:from-zinc-600 dark:to-zinc-400 dark:hover:from-zinc-700 dark:hover:to-zinc-800"
                           onClick={handleCopy}
                         >
                           {copied ? (

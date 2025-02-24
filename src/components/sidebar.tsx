@@ -14,6 +14,7 @@ import { SearchIcon, type SearchIconHandle } from "./pqoqubbw/search";
 import { BookTextIcon, type BookTextIconHandle } from "./pqoqubbw/book-text";
 import { ClockIcon, type ClockIconHandle } from "./pqoqubbw/clock";
 import { ModeToggle } from "@/components/mode-toggle";
+import { MoonIcon, MoonIconHandle } from "./pqoqubbw/moon";
 
 interface NavButtonProps {
   path: string;
@@ -88,6 +89,7 @@ export function MySidebar({
   const downloadIconRef = useRef<DownloadIconHandle>(null);
   const bookTextIconRef = useRef<BookTextIconHandle>(null);
   const clockIconRef = useRef<ClockIconHandle>(null);
+  const moonIconRef = useRef<MoonIconHandle>(null);
 
   return (
     <>
@@ -116,7 +118,7 @@ export function MySidebar({
       >
         <Link href="/" className="flex flex-row items-center gap-2">
           <Image
-            src="/myicon.png"
+            src="/icons/myicon.png"
             alt="@karrixthediv"
             width={26}
             height={26}
@@ -169,6 +171,13 @@ export function MySidebar({
             onMouseLeave={() => downloadIconRef.current?.stopAnimation()}
           />
           <NavButton
+            path="/dark-mode"
+            icon={<MoonIcon ref={moonIconRef} className="w-4 h-4 mr-2" />}
+            label="Dark Mode"
+            onMouseEnter={() => moonIconRef.current?.startAnimation()}
+            onMouseLeave={() => moonIconRef.current?.stopAnimation()}
+          />
+          <NavButton
             path="/changelog"
             icon={<ClockIcon ref={clockIconRef} className="w-4 h-4 mr-2" />}
             label="Changelog"
@@ -204,7 +213,7 @@ export function MySidebar({
               className="hover:bg-gray-200 dark:hover:bg-gray-800"
             >
               <Image
-                src="/twitter.svg"
+                src="/icons/twitter.svg"
                 alt="x"
                 width={16}
                 height={16}

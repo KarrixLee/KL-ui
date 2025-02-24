@@ -14,6 +14,7 @@ import {
   Clock,
   Download,
   GalleryVerticalEnd,
+  Moon,
   SaveOff,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -51,24 +52,6 @@ export function CommandMenu({
       <CommandInput placeholder="Type a command or search..." />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
-        <CommandGroup heading="Getting Started">
-          <CommandItem onSelect={() => runCommand(() => router.push("/"))}>
-            <Book className="mr-2 h-4 w-4" />
-            Introduction
-          </CommandItem>
-          <CommandItem
-            onSelect={() => runCommand(() => router.push("/installation"))}
-          >
-            <Download className="mr-2 h-4 w-4" />
-            Installation
-          </CommandItem>
-          <CommandItem
-            onSelect={() => runCommand(() => router.push("/changelog"))}
-          >
-            <Clock className="mr-2 h-4 w-4" />
-            Changelog
-          </CommandItem>
-        </CommandGroup>
         <CommandGroup heading="Components">
           <CommandItem
             onSelect={() =>
@@ -85,6 +68,30 @@ export function CommandMenu({
           >
             <SaveOff className="mr-2 h-4 w-4" />
             Unsave Popup
+          </CommandItem>
+        </CommandGroup>
+        <CommandGroup heading="Getting Started">
+          <CommandItem onSelect={() => runCommand(() => router.push("/"))}>
+            <Book className="mr-2 h-4 w-4" />
+            Introduction
+          </CommandItem>
+          <CommandItem
+            onSelect={() => runCommand(() => router.push("/installation"))}
+          >
+            <Download className="mr-2 h-4 w-4" />
+            Installation
+          </CommandItem>
+          <CommandItem
+            onSelect={() => runCommand(() => router.push("/dark-mode"))}
+          >
+            <Moon className="mr-2 h-4 w-4" />
+            Dark Mode
+          </CommandItem>
+          <CommandItem
+            onSelect={() => runCommand(() => router.push("/changelog"))}
+          >
+            <Clock className="mr-2 h-4 w-4" />
+            Changelog
           </CommandItem>
         </CommandGroup>
       </CommandList>

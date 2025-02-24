@@ -50,7 +50,7 @@ export function NavigationMenu() {
       : activeSection === id;
 
   return (
-    <nav className="hidden lg:flex flex-col gap-4 bg-white/60 dark:bg-gray-800/60 p-4 rounded-lg backdrop-blur-sm w-[250px]">
+    <nav className="hidden lg:flex flex-col gap-4 p-4 rounded-lg backdrop-blur-sm w-[250px]">
       {navigationItems.map((id) => (
         <Link
           key={id}
