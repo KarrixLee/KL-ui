@@ -13,6 +13,7 @@ import { DownloadIcon, type DownloadIconHandle } from "./pqoqubbw/download";
 import { SearchIcon, type SearchIconHandle } from "./pqoqubbw/search";
 import { BookTextIcon, type BookTextIconHandle } from "./pqoqubbw/book-text";
 import { ClockIcon, type ClockIconHandle } from "./pqoqubbw/clock";
+import { ModeToggle } from "@/components/mode-toggle";
 
 interface NavButtonProps {
   path: string;
@@ -55,10 +56,10 @@ function NavButton({
       <Button
         variant="ghost"
         className={cn(
-          "w-full justify-between hover:bg-gray-200",
+          "w-full justify-between hover:bg-gray-200 dark:hover:bg-gray-800/60",
           isActive
-            ? "bg-gray-50 text-gray-900 border border-gray-300/50"
-            : "text-gray-500"
+            ? "bg-gradient-to-r from-gray-50 to-gray-100/50 text-gray-900 border border-gray-300/50 dark:from-zinc-800/90 dark:to-zinc-800/50 dark:text-white dark:border-zinc-700/50"
+            : "text-gray-500 dark:text-gray-400"
         )}
       >
         <div className="flex items-center gap-1">
@@ -66,7 +67,7 @@ function NavButton({
           {label}
         </div>
         {isNew && (
-          <span className="text-2xs text-muted-foreground bg-purple-100 px-2 rounded-full">
+          <span className="text-2xs text-muted-foreground bg-purple-100 px-2 rounded-full dark:bg-purple-900/50 dark:text-purple-400">
             New
           </span>
         )}
@@ -135,7 +136,7 @@ export function MySidebar({
           />
           <Input
             placeholder="Search"
-            className="pl-10 pr-10 rounded-md focus-visible:ring-0 focus-visible:ring-offset-0 border-none bg-gray-200 cursor-pointer"
+            className="pl-10 pr-10 rounded-md focus-visible:ring-0 focus-visible:ring-offset-0 border-none bg-gray-200 dark:bg-zinc-800 cursor-pointer"
             onClick={() => setOpenCommand(true)}
             readOnly
           />
@@ -197,20 +198,39 @@ export function MySidebar({
         {/* footer */}
         <div className="mt-auto flex justify-center opacity-60">
           <Link href="https://x.com/karrixthediv" target="_blank">
-            <Button variant="ghost" size="icon" className="hover:bg-gray-200">
-              <Image src="/twitter.svg" alt="x" width={16} height={16} />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="hover:bg-gray-200 dark:hover:bg-gray-800"
+            >
+              <Image
+                src="/twitter.svg"
+                alt="x"
+                width={16}
+                height={16}
+                className="dark:invert"
+              />
             </Button>
           </Link>
           <Link href="https://github.com/karrixlee/KL-UI" target="_blank">
-            <Button variant="ghost" size="icon" className="hover:bg-gray-200">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="hover:bg-gray-200 dark:hover:bg-gray-800"
+            >
               <Github className="w-4 h-4" />
             </Button>
           </Link>
           <Link href="mailto:karrixlee1231@gmail.com" target="_blank">
-            <Button variant="ghost" size="icon" className="hover:bg-gray-200">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="hover:bg-gray-200 dark:hover:bg-gray-800"
+            >
               <Mail className="w-4 h-4" />
             </Button>
           </Link>
+          <ModeToggle />
         </div>
       </div>
     </>

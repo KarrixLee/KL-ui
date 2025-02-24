@@ -17,7 +17,7 @@ export function RootPage({ children }: { children: React.ReactNode }) {
         <MySidebar openSideBar={openSideBar} setOpenSideBar={setOpenSideBar} />
         <div
           className={cn(
-            "bg-background w-full rounded-2xl p-6 border border-gray-200 flex flex-col",
+            "bg-background dark:bg-zinc-900 w-full rounded-2xl p-6 border border-gray-200 dark:border-zinc-800 flex flex-col",
             "transition-transform duration-300 ease-in-out",
             openSideBar ? "translate-x-[270px]" : "translate-x-0",
             "md:translate-x-0"

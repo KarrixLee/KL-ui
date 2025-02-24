@@ -41,6 +41,7 @@ body {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --transition-duration: 200ms;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -76,11 +77,38 @@ body {
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  html.dark {
+    transition: background-color var(--transition-duration) ease, 
+                color var(--transition-duration) ease;
+  }
+
+  body {
+    transition: background-color var(--transition-duration) ease;
+  }
+
+  /* Only apply transitions to specific properties that change with theme */
+  .transition-theme {
+    transition: background-color var(--transition-duration) ease,
+                border-color var(--transition-duration) ease,
+                color var(--transition-duration) ease,
+                fill var(--transition-duration) ease,
+                stroke var(--transition-duration) ease;
+  }
 }
 
 @layer base {
   * {
     @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
